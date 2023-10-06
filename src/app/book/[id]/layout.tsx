@@ -2,12 +2,7 @@ import { Metadata } from 'next'
 import { Book } from '../../../types/books'
 import { getBookById } from '../../../services/bookServices'
 
-type Props = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }): Promise<Metadata> {
   const { id } = params
 
   const book: Book | undefined = await getBookById(id)
