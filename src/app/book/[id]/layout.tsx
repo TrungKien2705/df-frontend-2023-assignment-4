@@ -1,22 +1,23 @@
-import { Metadata } from 'next'
 import React from 'react'
-import { Book } from '../../../types/books'
+import { Metadata } from 'next'
 import { getBookById } from '../../../services/bookServices'
 
 type Props = {
-  params: { id: string }
+  params: { id: number }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = params
 
-  const book: Book | undefined = await getBookById(id)
+  const book = await getBookById(id)
 
   return {
     title: book?.name || 'Not Found',
-    description: book?.description,
+    description: book?.description || 'description',
     openGraph: {
-      images: book?.thumbnail,
+      images:
+        book?.thumbnail ||
+        'https://trungkien-assignment-4.vercel.app/assets/Assignment-4.png',
     },
   }
 }

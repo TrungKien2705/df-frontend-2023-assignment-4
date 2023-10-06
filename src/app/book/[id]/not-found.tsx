@@ -1,12 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import { headers } from 'next/headers'
 import Button from '../../../components/Button'
 
 const NotFound = async () => {
-  const headersList = headers()
-  const domain = headersList.get('host')
-  console.log(domain)
   return (
     <div className="grid px-4 bg-white place-content-center dark:bg-gray-900">
       <div className="text-center">
