@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { debounce } from 'next/dist/server/utils'
-import { useRouter } from 'next/navigation'
 import Button from '../components/Button'
 import Table from '../components/Table'
 import ModalForm from '../components/modal/ModalForm'
@@ -29,8 +28,7 @@ export default function Home({
   const [isAdd, setIsAdd] = useState(true)
   const [item, setItem] = useState<Book>(initialBook)
   const [dataFilter, setDataFilter] = useState<Book[]>([])
-  const { register, watch, setValue } = useForm({ defaultValues })
-  const router = useRouter()
+  const { register, watch } = useForm({ defaultValues })
   useEffect(() => {
     const fetchData = async () => {
       if (!loading) {

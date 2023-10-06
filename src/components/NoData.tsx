@@ -9,9 +9,7 @@ const NoData = () => {
           Uh-oh!
         </p>
 
-        <p className="mt-4 text-gray-500 dark:text-gray-400">
-            No books found
-        </p>
+        <p className="mt-4 text-gray-500 dark:text-gray-400">No books found</p>
 
         <Button
           className="inline-block px-5 py-3 mt-6"

@@ -49,10 +49,7 @@ const Input: React.FC<InputProps> = forwardRef(
                 {dataSelect &&
                   dataSelect.map((item, index) => {
                     return (
-                      <option
-                        key={index}
-                        value={item.name}
-                      >
+                      <option key={index} value={item.name}>
                         {item.name}
                       </option>
                     )

@@ -82,6 +82,7 @@ const ModalDelete: React.FC<ModalDeleteProps> = ({
 
                 <div className="mt-4 flex items-center justify-center gap-4">
                   <Button
+                    disabled={loading}
                     label="Delete"
                     type="submit"
                     secondary={false}
@@ -89,6 +90,7 @@ const ModalDelete: React.FC<ModalDeleteProps> = ({
                     onClick={onClickDelete}
                   />
                   <Button
+                    disabled={loading}
                     label="Canel"
                     type="button"
                     secondary
