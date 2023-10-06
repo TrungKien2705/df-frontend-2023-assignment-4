@@ -1,8 +1,13 @@
 import { Metadata } from 'next'
+import React from 'react'
 import { Book } from '../../../types/books'
 import { getBookById } from '../../../services/bookServices'
 
-export async function generateMetadata({ params }): Promise<Metadata> {
+type Props = {
+  params: { id: string }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = params
 
   const book: Book | undefined = await getBookById(id)
@@ -16,6 +21,10 @@ export async function generateMetadata({ params }): Promise<Metadata> {
   }
 }
 
-export default function layout({ children }) {
+interface LayoutProps {
+  children: React.ReactNode
+}
+
+export default function layout({ children }: LayoutProps) {
   return <div className="max-w-screen-xl mx-auto">{children}</div>
 }
